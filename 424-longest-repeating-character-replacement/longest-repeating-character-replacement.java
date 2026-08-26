@@ -9,7 +9,7 @@ class Solution {
 
     public int characterReplacement(String s, int k) {
 
-        int[] arr = new int[256];
+        int[] arr = new int[26];
         int left = 0;
         int res = 0;
 
