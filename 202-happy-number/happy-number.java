@@ -14,7 +14,7 @@ class Solution {
         int sum = 0;
         int slow = n;
         int fast = n;
-        while (n > 0) {
+        while (fast != 1) {
             slow = getSum(slow);
             fast = getSum(fast);
             fast = getSum(fast);
@@ -25,6 +25,6 @@ class Solution {
 
         }
 
-        return false;
+        return true;
     }
 }
