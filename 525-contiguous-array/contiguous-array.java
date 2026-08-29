@@ -1,7 +1,6 @@
 class Solution {
     public int findMaxLength(int[] nums) {
         int res = 0;
-        int length = 0;
         int zeroes = 0;
         int ones = 0;
         Map<Integer, Integer> map = new HashMap<>();
@@ -14,13 +13,13 @@ class Solution {
 
             int diff = zeroes - ones;
             if (diff == 0) {
-                length = i + 1;
+                int length = i + 1;
                 res = Math.max(res, length);
                 continue;
             }
 
             if (map.containsKey(diff)) {
-                length = i - map.get(diff);
+                int length = i - map.get(diff);
                 res = Math.max(res, length);
             }
 
