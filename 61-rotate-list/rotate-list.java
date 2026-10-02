@@ -14,20 +14,28 @@ class Solution {
             return head;
         }
         ListNode last = head;
-        int count = 1;
+        int n = 1;
         while (last.next != null) {
             last = last.next;
-            count++;
+            n++;
         }
-        k = k % count;
-        last.next = head;
+        k = k % n;
+        if (k == 0) {
+            return head;
+        }
 
-        int newLast = count - k;
+        int newLast = n - k;
         ListNode newTail = head;
-        while (newLast > 1) {
+        int count = 1;
+        while (newTail != null) {
+            if (newLast == count) {
+                break;
+            }
+            count++;
             newTail = newTail.next;
-            newLast--;
         }
+
+        last.next = head;
         head = newTail.next;
         newTail.next = null;
 
