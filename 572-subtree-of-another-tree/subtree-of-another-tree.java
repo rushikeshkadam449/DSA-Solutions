@@ -16,26 +16,6 @@
 class Solution {
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
         return function(root, subRoot);
-        // while(root != null){
-        // if(root.val == subRoot.val){
-        //     return function1(root, subRoot);
-        // }
-        // root = root.left;
-        
-
-        // }
-
-        // while(root != null){
-        // if(root.val == subRoot.val){
-        //     return function1(root, subRoot);
-        // }
-        // root = root.right;
-        
-
-        // }
-
-        // return false;
-
     }
 
     public boolean function(TreeNode root, TreeNode subRoot) {
