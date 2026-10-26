@@ -15,19 +15,26 @@
  */
 
 class Solution {
+    boolean result = false;
+
     public boolean hasPathSum(TreeNode root, int targetSum) {
-        return function(root, targetSum, 0);
+        function(root, targetSum, 0);
+        return result;
     }
 
-    public boolean function(TreeNode root, int targetSum, int currentSum) {
+    public void function(TreeNode root, int targetSum, int currentSum) {
         if (root == null) {
-            return false;
+            return;
         }
         currentSum += root.val;
         if (root.left == null && root.right == null) {
-            return currentSum == targetSum;
+            if (currentSum == targetSum) {
+                result = true;
+
+            }
+            return;
         }
-        return function(root.left, targetSum, currentSum) ||
-                function(root.right, targetSum, currentSum);
+        function(root.left, targetSum, currentSum);
+        function(root.right, targetSum, currentSum);
     }
 }
